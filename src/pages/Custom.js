@@ -1,10 +1,38 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Main = () => {
-  return <div className="custom-page-background">
-    <Link to={`/custom/payments`}><div className="link-to-customs"></div></Link>
-  </div>;
-};
+    const [isFirstActive, setIsFirstActive] = useState(true);
+    const toggleBackground = () => {
+      setIsFirstActive(!isFirstActive)
+    }
+    return (
+        <>
+            <div
+                className="custom-page-background"
+                style={{ backgroundImage: "url('img/3.png')", display: (isFirstActive) ? 'block' : 'none'}}
+            >
+                <div
+                    className="link-to-customs"
+                    style={{ cursor: 'pointer' }}
+                    onClick={toggleBackground}
+                />
+            </div>
+            <div
+                className="custom-page-background"
+                style={{ backgroundImage: "url('img/5.png')", display: (!isFirstActive) ? 'block' : 'none' }}
+            >
+                <div
+                    className="link-to-customs"
+                    style={{ cursor: 'pointer' }}
+                    onClick={toggleBackground}
+                />
+            </div>
+            <Link to={`/custom/payments`}><div className="payments-button">
 
-export default Main;
+            </div></Link>
+        </>
+    )
+}
+
+export default Main
