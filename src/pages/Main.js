@@ -1,19 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import Header from './../components/Header'
+import Footer from './../components/Footer'
 
 const Main = () => {
-  return (
-  <>
-  <div className="header">
-    <Link to={`/custom`}><div className="link-to-customs"></div></Link>
-  </div>
-  <div className="content" style={{backgroundImage:"./img/main-page.png"}}>
-  </div>
-  <div className="footer">
-    <Link to={`/custom`}><div className="link-to-customs"></div></Link>
-  </div>
-  </>
-);
-};
+    return (
+        <>
+            <Header />
+            <div className="content" style={{ backgroundImage: './img/main-page.png' }} />
+            <Footer />
+        </>
+    )
+}
 
-export default Main;
+export default Main
