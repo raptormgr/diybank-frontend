@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import NewToken from '../api/NewToken';
 
 const Main = () => {
     const [isFirstActive, setIsFirstActive] = useState(true);
@@ -9,8 +10,8 @@ const Main = () => {
     return (
         <>
             <div
-                className="custom-page-background"
-                style={{ backgroundImage: "url('img/3.png')", display: (isFirstActive) ? 'block' : 'none'}}
+                className="header"
+                style={{ display: (isFirstActive) ? 'block' : 'none'}}
             >
                 <div
                     className="link-to-customs"
@@ -22,6 +23,7 @@ const Main = () => {
                 className="custom-page-background"
                 style={{ backgroundImage: "url('img/5.png')", display: (!isFirstActive) ? 'block' : 'none' }}
             >
+
                 <div
                     className="link-to-customs"
                     style={{ cursor: 'pointer' }}
@@ -31,8 +33,15 @@ const Main = () => {
             <Link to={`/custom/payments`}><div className="payments-button">
 
             </div></Link>
+            <div className = "content">
+              <div className = "input-form">
+                <NewToken />
+              </div>
+            </div>
+            <div className="footer" />
+
         </>
     )
 }
 
-export default Main
+export default Main;

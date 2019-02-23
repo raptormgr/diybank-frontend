@@ -7,6 +7,8 @@
 
 # testing
 /coverage
+# images
+/img/*.xcf
 
 # production
 /build

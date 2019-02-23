@@ -7,6 +7,26 @@
     background-size: cover;
     background-position: center top;
 }
+.header {
+    background-image: url('img/header.png');
+    width: 100%;
+    height: 241px;
+    background-size: cover;
+    background-position: center top;
+}
+.footer {
+    background-image: url('img/footer.png');
+    width: 100%;
+    height: 190px;
+    background-size: cover;
+    background-position: center bottom;
+}
+.content {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+}
 .link-to-customs {
     height: 122px;
     width: 200px;
@@ -21,6 +41,13 @@
     height: 769px;
     background-position: center top;
     background-repeat: no-repeat;
+}
+.input-form {
+  height: 100px;
+  width: 250px;
+  position: relative;
+  top: 40%;
+  left: 40%;
 }
 .payments-button {
     height: 40px;
