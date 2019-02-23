@@ -75,7 +75,7 @@
     cursor:pointer;
     margin-bottom: 2px;
 }
-.block-single:after {
+.block-single:not(:last-child):after {
     content: '.';
     width: 30px;
     height: 10px;

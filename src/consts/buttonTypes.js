@@ -3,54 +3,71 @@ export const buttonTypes = {
         {
             name: 'spent',
             label: 'Потратил',
+            component: 'BANK_ACCOUNT'
         },
         {
             name: 'balance',
             label: 'Баланс',
+            component: 'BANK_ACCOUNT'
         },
         {
             name: 'count',
             label: 'Количество',
+            component: 'AMMOUNT_INPUT'
         },
         {
             name: 'category',
             label: 'Категория',
+            component: 'CATEGORY'
         },
         {
             name: 'bigger',
             label: 'Больше',
-            shortLabel: '>'
+            shortLabel: '>',
+            component: 'TEXT'
         },
         {
             name: 'lower',
             label: 'Меньше',
-            shortLabel: '<'
+            shortLabel: '<',
+            component: 'TEXT'
         },
         {
             name: 'and',
             label: 'и',
+            component: 'TEXT'
         },
         {
             name: 'or',
             label: 'или',
+            component: 'TEXT'
         },
     ],
     actions: [
         {
             name: 'transfer',
             label: 'Перевод',
+            component: 'BANK_ACCOUNT'
         },
         {
             name: 'disable',
             label: 'Заблокировать',
+            component: 'BANK_ACCOUNT'
+        },
+        {
+            name: 'count',
+            label: 'Количество',
+            component: 'AMMOUNT_INPUT'
         },
         {
             name: 'and',
-            label: 'И',
+            label: 'и',
+            component: 'TEXT'
         },
         {
             name: 'or',
-            label: 'Или',
+            label: 'или',
+            component: 'TEXT'
         },
     ],
 }

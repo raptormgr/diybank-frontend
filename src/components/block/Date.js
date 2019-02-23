@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Input } from 'antd'
 
-const Category = (props) => {
+const Date = (props) => {
     return <Input />
 }
 
-export default Category
+export default Date

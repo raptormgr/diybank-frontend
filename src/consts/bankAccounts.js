@@ -1,4 +1,4 @@
-export const buttonTypes = [
+export const bankAccounts = [
     { number: '40817810099910004312', name: 'Visa' },
     { number: '40817810099910124312', name: 'МИР' },
     { number: '40817810099910564312', name: 'Зарплатная' },
