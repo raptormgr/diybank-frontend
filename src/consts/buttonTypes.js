@@ -9,8 +9,8 @@ export const buttonTypes = {
             label: 'Баланс',
         },
         {
-            name: 'sum',
-            label: 'Сумма',
+            name: 'count',
+            label: 'Количество',
         },
         {
             name: 'category',
@@ -19,18 +19,20 @@ export const buttonTypes = {
         {
             name: 'bigger',
             label: 'Больше',
+            shortLabel: '>'
         },
         {
             name: 'lower',
             label: 'Меньше',
+            shortLabel: '<'
         },
         {
             name: 'and',
-            label: 'И',
+            label: 'и',
         },
         {
             name: 'or',
-            label: 'Или',
+            label: 'или',
         },
     ],
     actions: [
