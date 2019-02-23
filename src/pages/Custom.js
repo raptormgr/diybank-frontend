@@ -33,9 +33,12 @@ const Main = () => {
             <Link to={`/custom/payments`}><div className="payments-button">
 
             </div></Link>
+
             <div className = "content">
-              <div className = "input-form">
-                <NewToken />
+              <div className = "container">
+                <div className = "input-form">
+                  <NewToken />
+                </div>
               </div>
             </div>
             <div className="footer" />

@@ -7,7 +7,7 @@ const Main = () => {
   <div className="header">
     <Link to={`/custom`}><div className="link-to-customs"></div></Link>
   </div>
-  <div className="content">
+  <div className="content" style={{backgroundImage:"./img/main-page.png"}}>
   </div>
   <div className="footer">
     <Link to={`/custom`}><div className="link-to-customs"></div></Link>

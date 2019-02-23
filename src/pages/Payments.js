@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import GetCases from '../api/GetCases';
 
 const Payments = () => {
     return (
