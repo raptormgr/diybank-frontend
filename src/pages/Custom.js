@@ -1,35 +1,18 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, BrowserRouter } from 'react-router-dom';
+import Header from './../components/Header'
+import Footer from './../components/Footer'
 import NewToken from '../api/NewToken';
+import Test from "../pages/Test";
 
-const Main = () => {
+const Custom = () => {
     const [isFirstActive, setIsFirstActive] = useState(true);
     const toggleBackground = () => {
       setIsFirstActive(!isFirstActive)
     }
     return (
         <>
-            <div
-                className="header"
-                style={{ display: (isFirstActive) ? 'block' : 'none'}}
-            >
-                <div
-                    className="link-to-customs"
-                    style={{ cursor: 'pointer' }}
-                    onClick={toggleBackground}
-                />
-            </div>
-            <div
-                className="custom-page-background"
-                style={{ backgroundImage: "url('img/5.png')", display: (!isFirstActive) ? 'block' : 'none' }}
-            >
-
-                <div
-                    className="link-to-customs"
-                    style={{ cursor: 'pointer' }}
-                    onClick={toggleBackground}
-                />
-            </div>
+            <Header />
             <Link to={`/custom/payments`}><div className="payments-button">
 
             </div></Link>
@@ -41,10 +24,10 @@ const Main = () => {
                 </div>
               </div>
             </div>
-            <div className="footer" />
+            <Footer />
 
         </>
     )
 }
 
-export default Main;
+export default Custom;

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import api from '../api/default';
-
+import {Route} from 'react-router-dom';
+import {history} from '../components/routing';
 class NewToken extends React.Component {
   state = {
     email: '',
@@ -23,6 +24,7 @@ class NewToken extends React.Component {
     }).then(res => {
         axios.defaults.headers.common['Authorization'] = res.data.token;
         console.log(res.data.token);
+        history.push('/custom/test');
       }).catch(error => {
         console.log(error);
       })
