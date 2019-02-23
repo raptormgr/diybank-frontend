@@ -1,6 +1,47 @@
 import React, { useState } from 'react'
 import { Select, DatePicker } from 'antd'
 import { bankAccounts } from './../../consts/bankAccounts'
+import 'moment/locale/ru';
+
+const ruRu = {
+    "lang": {
+      "placeholder": "Select date",
+      "rangePlaceholder": ["Start date", "End date"],
+      "today": "Сегодня",
+      "now": "Now",
+      "backToToday": "Back to today",
+      "ok": "Ok",
+      "clear": "Clear",
+      "month": "Month",
+      "year": "Year",
+      "timeSelect": "Select time",
+      "dateSelect": "Select date",
+      "monthSelect": "Choose a month",
+      "yearSelect": "Choose a year",
+      "decadeSelect": "Choose a decade",
+      "yearFormat": "YYYY",
+      "dateFormat": "M/D/YYYY",
+      "dayFormat": "D",
+      "dateTimeFormat": "M/D/YYYY HH:mm:ss",
+      "monthFormat": "MMMM",
+      "monthBeforeYear": true,
+      "previousMonth": "Previous month (PageUp)",
+      "nextMonth": "Next month (PageDown)",
+      "previousYear": "Last year (Control + left)",
+      "nextYear": "Next year (Control + right)",
+      "previousDecade": "Last decade",
+      "nextDecade": "Next decade",
+      "previousCentury": "Last century",
+      "nextCentury": "Next century"
+    },
+    "timePickerLocale": {
+      "placeholder": "Select time"
+    },
+    "dateFormat": "YYYY-MM-DD",
+    "dateTimeFormat": "YYYY-MM-DD HH:mm:ss",
+    "weekFormat": "YYYY-wo",
+    "monthFormat": "YYYY-MM"
+  }
 
 const BankAccount = props => {
     let transferText, dateText, selectType, transferToText
@@ -69,7 +110,7 @@ const BankAccount = props => {
                                 день
                             </Select.Option>
                             <Select.Option value="week" key="week">
-                                неделя
+                                неделю
                             </Select.Option>
                             <Select.Option value="month" key="month">
                                 месяц
@@ -79,7 +120,8 @@ const BankAccount = props => {
                             </Select.Option>
                         </Select>
                     )}
-                    {selectType === 'onDate' && <DatePicker placeholder="выберите дату" />}
+                    {selectType === 'onDate' && 
+        <DatePicker placeholder="выберите дату" format="DD.MM.YYYY" locale={ruRu} />}
                 </div>
             )}
         </div>

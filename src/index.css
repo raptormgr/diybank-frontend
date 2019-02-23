@@ -1,10 +1,79 @@
 @import '~antd/dist/antd.css';
-
+.custom-container {
+    width: 1366px;
+    margin: 0 auto;
+    position: relative;
+}
+.custom-menu {
+    background-image: url('img/menu.jpg');
+    width: 275px;
+    height: 280px;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 36px;
+}
+.logout-button {
+    height: 34px;
+    width: 76px;
+    position: absolute;
+    left: 640px;
+    top: 60px;
+}
+.login-input {
+    height: 26px;
+    width: 270px;
+    position: absolute;
+    left: 56px;
+    top: 353px;
+    border: 0;
+}
+.login-input:focus, .password-input:focus {
+    outline: none;
+}
+.password-input {
+    height: 26px;
+    width: 270px;
+    position: absolute;
+    left: 56px;
+    top: 419px;
+    border: 0;
+}
+.login-button {
+    height: 39px;
+    width: 124px;
+    position: absolute;
+    left: 43px;
+    top: 477px;
+    cursor: pointer;
+}
+.login-inner {
+    width: 1366px;
+    margin: 0 auto;
+    position: relative;
+}
 .axiostest {
   position: relative;
   right: 40%;
   top: 40%;
   text-align: center;
+}
+.login-page {
+    background-image: url('img/login.png');
+    width: 100%;
+    height: 1453px;
+    background-size: cover;
+    background-position: center top;
+}
+.content.custom-bg {
+    background-image: url('img/custom.png');
+    margin-bottom: 300px;
+    width: 100%;
+}
+.content.main-page-bg {
+    background-image: url('img/main-page.png');
+    width: 100%;
+    height: 800px;
 }
 .main-page-background {
     background-image: url('img/1.png');
@@ -12,6 +81,11 @@
     height: 1312px;
     background-size: cover;
     background-position: center top;
+}
+.header-inner {
+    width: 1366px;
+    margin: 0 auto;
+    position: relative;
 }
 .header {
     background-image: url('img/header.png');
@@ -28,10 +102,19 @@
     background-position: center bottom;
 }
 .content {
-    width: 100%;
+    width: 1366px;
     min-height: 300px;
     background-size: cover;
     background-position: center;
+    margin: 0 auto;
+}
+.link-to-main-page {
+    height: 122px;
+    width: 200px;
+    position: absolute;
+    left: 36px;
+    top: 119px;
+    border: 1px solid black;
 }
 .link-to-customs {
     height: 122px;
@@ -59,8 +142,8 @@
     height: 40px;
     width: 274px;
     position: absolute;
-    right: 36px;
-    top: 376px;
+    right: 0;
+    top: 137px;
     border: 1px solid black;
 }
 .block-single {

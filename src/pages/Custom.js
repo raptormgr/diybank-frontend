@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
-import { Link, BrowserRouter } from 'react-router-dom';
-import Header from './../components/Header'
-import Footer from './../components/Footer'
-import NewToken from '../api/NewToken';
-import Test from "../pages/Test";
+import { Link } from 'react-router-dom';
 
 const Custom = () => {
     const [isFirstActive, setIsFirstActive] = useState(true);
@@ -12,20 +8,15 @@ const Custom = () => {
     }
     return (
         <>
-            <Header />
-            <Link to={`/custom/payments`}><div className="payments-button">
-
-            </div></Link>
-
-            <div className = "content">
-              <div className = "container">
-                <div className = "input-form">
-                  <NewToken />
+            <div className = "content custom-bg">
+              <div className="custom-container">
+                <div className="custom-menu">
+                  <Link to={`/custom/payments`}>
+                    <div className="payments-button"></div>
+                  </Link>
                 </div>
               </div>
             </div>
-            <Footer />
-
         </>
     )
 }

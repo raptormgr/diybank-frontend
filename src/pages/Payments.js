@@ -42,8 +42,6 @@ const Payments = () => {
         alert('save');
     }
     return (
-        <>
-            <Header />
             <div className="content" style={{ padding: '30px 30px 30px 30px' }}>
                 <Row gutter={16}>
                     <Col span={24}>
@@ -146,8 +144,6 @@ const Payments = () => {
                     </Col>
                 </Row>
             </div>
-            <Footer />
-        </>
     )
 }
 

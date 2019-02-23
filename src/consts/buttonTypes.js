@@ -42,6 +42,12 @@ export const buttonTypes = {
             label: 'или',
             component: 'TEXT'
         },
+        {
+            name: 'equals',
+            label: 'равно',
+            component: 'TEXT',
+            shortLabel: '=',
+        },
     ],
     actions: [
         {
