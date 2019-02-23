@@ -8,7 +8,7 @@ class GetCases extends React.Component {
   };
   componentDidMount() {
     if(axios.defaults.headers.common['Authorization']){
-      api.get('cases').then(res => {
+      api.get('cases?').then(res => {
         const cases = res.data;
         console.log(res.data);
         this.setState({ cases });
@@ -19,12 +19,10 @@ class GetCases extends React.Component {
   };
   render() {
     if(this.state.cases){
-      return (
-        this.state.cases.map(function(item, i){
+      return this.state.cases.map(function(item, i){
           console.log('test');
-          return <li key={i}>{item.ID + ' | ' + item.Name + ' | '}</li>
-        })
-      );
+          return <li key={i}>{item.ID + ' | ' + item.Name + ' | ' + item.Conditions + ' | ' + item.Actions + ' | '}</li>
+        });
     } else return <div>dksjalkdjklsajdklsjakdljaslkdjlksajdlksjadlkjaslkdjaslkjdlksajdlksajdlksjalkdjslkdjslakdjlksajda</div>
 
   }

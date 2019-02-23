@@ -35,6 +35,7 @@ class NewToken extends React.Component {
       <input onChange={this.handleLogin} type="text" placeholder="Username" />
       <input onChange={this.handlePassword} type="text" placeholder="Password" />
       <button type="submit" onClick={this.handleSubmit} className="login-form-button">
+        login
       </button>
       </>
     );
