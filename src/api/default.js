@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export default axios.create({
-  baseURL: 'http://diybankapi.s-vfu.ru/api/v1/'
+  baseURL: 'http://diybankapi.us.to/api/v1/'
 });
