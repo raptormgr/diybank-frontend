@@ -17,7 +17,8 @@ class App extends Component {
           <Layout>
             <Route path="/" component={Main} exact />
             <Route path="/custom" component={Custom} exact />
-            <Route path="/custom/payments" component={Payments} exact />
+            <Route path="/custom/payments" component={Payments} exact/>
+            <Route path="/custom/payments/:id" component={Payments} />
             <Route path="/custom/test" component={Test} exact />
           </Layout>
         </Switch>

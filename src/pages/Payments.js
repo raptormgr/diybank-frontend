@@ -1,9 +1,67 @@
-import React, { useState } from 'react'
-import Header from './../components/Header'
-import Footer from './../components/Footer'
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import Block from './../components/Block'
 import { buttonTypes } from './../consts/buttonTypes'
-import { Row, Col, Icon, Button, Empty } from 'antd'
+import { Row, Col, Icon, Button, Empty, Tabs, Table } from 'antd'
+ 
+const columns = [{
+    title: 'Название',
+    dataIndex: 'name',
+    key: 'name',
+    render: (text, row) => <Link to={`/custom/payments/${row.id}`}>{text}</Link>,
+  }, {
+    title: 'Дата редактирования',
+    dataIndex: 'updatedAt',
+    align: 'center',
+    key: 'updatedAt',
+  }, {
+    title: 'Дата создания',
+    dataIndex: 'createdAt',
+    align: 'center',
+    key: 'createdAt',
+  }, {
+    title: 'Условия',
+    key: 'conditions',
+    align: 'center',
+    dataIndex: 'conditions',
+  }, {
+    title: 'Действия',
+    key: 'actions',
+    align: 'center',
+    dataIndex: 'actions',
+  }, {
+    title: '',
+    key: 'action',
+    align: 'center',
+    render: (text, record) => (
+        <a href="javascript:;">Удалить</a>
+    ),
+  }];
+const data = [{
+    key: '1',
+    id: '1',
+    name: 'Платеж 1',
+    updatedAt: '',
+    createdAt: '24.02.2019',
+    conditions: 3,
+    actions: 2,
+  },{
+    key: '2',
+    id: '2',
+    name: 'Платеж 2',
+    updatedAt: '24.02.2019',
+    createdAt: '24.02.2019',
+    conditions: 1,
+    actions: 1,
+  },{
+    key: '3',
+    id: '3',
+    name: 'Платеж 3',
+    updatedAt: '24.02.2019',
+    createdAt: '23.02.2019',
+    conditions: 2,
+    actions: 1,
+  }];
 
 var id = function() {
     return (
@@ -13,7 +71,9 @@ var id = function() {
             .substr(2, 9)
     )
 }
-const Payments = () => {
+const Payments = (props) => {
+    const [activeTab, setActiveTab] = useState('1')
+    const [selectedCaseID, setSelectedCaseID] = useState(undefined)
     const [blocks, setBlocks] = useState([
         {
             type: 'condition',
@@ -23,6 +83,16 @@ const Payments = () => {
             component: 'BANK_ACCOUNT'
         },
     ])
+    useEffect(() => {
+        console.log(selectedCaseID)
+        if(!props.match.params.id) {
+            setSelectedCaseID(undefined)
+        }
+        if(props.match.params.id !== selectedCaseID) {
+            setSelectedCaseID(props.match.params.id)
+            setActiveTab('1')
+        }
+    })
 
     const addBlock = block => {
         const filteredBlocks = blocks.filter(item => item.type === block.type)
@@ -42,20 +112,27 @@ const Payments = () => {
         alert('save');
     }
     return (
-            <div className="content" style={{ padding: '30px 30px 30px 30px' }}>
+            <div className="content" style={{ padding: '30px 30px 30px 30px', minHeight: '700px' }}>
+                <div style={{
+    display: "inline-block",
+    position: "absolute",
+    top: "263px"}}>
+                    <Icon type="box-plot" style={{ fontSize: '30px', float: 'left' }} />
+                    <p
+                        style={{
+                            fontSize: '24px',
+                            fontWeight: 'bold',
+                            marginLeft: '50px',
+                        }}
+                    >
+                        DIY платежи
+                    </p>
+                </div>
+
+                <Tabs type="card" activeKey={activeTab} onTabClick={(tab) => setActiveTab(tab)}>
+                    <Tabs.TabPane tab="Платеж" key="1">
+                    
                 <Row gutter={16}>
-                    <Col span={24}>
-                        <Icon type="box-plot" style={{ fontSize: '30px', float: 'left' }} />
-                        <p
-                            style={{
-                                fontSize: '24px',
-                                fontWeight: 'bold',
-                                marginLeft: '50px',
-                            }}
-                        >
-                            DIY платежи
-                        </p>
-                    </Col>
                     <Col
                         span={6}
                         style={{
@@ -143,6 +220,11 @@ const Payments = () => {
                         </div>
                     </Col>
                 </Row>
+                    </Tabs.TabPane>
+                    <Tabs.TabPane tab="Сохраненные" key="2">
+                        <Table columns={columns} dataSource={data} />
+                    </Tabs.TabPane>
+                </Tabs>
             </div>
     )
 }

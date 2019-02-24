@@ -1,4 +1,7 @@
 @import '~antd/dist/antd.css';
+.ant-tabs-nav {
+    left: 350px !important;
+}
 .custom-container {
     width: 1366px;
     margin: 0 auto;

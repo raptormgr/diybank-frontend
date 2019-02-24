@@ -21,18 +21,6 @@ export const buttonTypes = {
             component: 'CATEGORY'
         },
         {
-            name: 'bigger',
-            label: 'Больше',
-            shortLabel: '>',
-            component: 'TEXT'
-        },
-        {
-            name: 'lower',
-            label: 'Меньше',
-            shortLabel: '<',
-            component: 'TEXT'
-        },
-        {
             name: 'and',
             label: 'и',
             component: 'TEXT'
@@ -41,12 +29,6 @@ export const buttonTypes = {
             name: 'or',
             label: 'или',
             component: 'TEXT'
-        },
-        {
-            name: 'equals',
-            label: 'равно',
-            component: 'TEXT',
-            shortLabel: '=',
         },
     ],
     actions: [

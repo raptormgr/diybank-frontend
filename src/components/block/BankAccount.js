@@ -78,7 +78,7 @@ const BankAccount = props => {
     return (
         <div>
             <span style={{ marginRight: '10px' }}>{transferText}</span>
-            <Select style={{ width: '250px' }} placeholder="выберите счет">
+            <Select style={{ width: '250px' }} placeholder="выберите счет" showSearch>
                 {bankAccounts.map(account => {
                     return (
                         <Select.Option value={account.number} key={account.number}>{`${
@@ -90,7 +90,7 @@ const BankAccount = props => {
             {transferToText && (
                 <div style={{marginTop: '10px'}}>
                     <span style={{ marginRight: '10px' }}>{transferToText}</span>
-                    <Select style={{ width: '250px' }} placeholder="выберите счет">
+                    <Select style={{ width: '250px' }} placeholder="выберите счет" showSearch>
                         {bankAccounts.map(account => {
                             return (
                                 <Select.Option value={account.number} key={account.number}>{`${
@@ -105,7 +105,7 @@ const BankAccount = props => {
                 <div style={{ marginTop: '10px' }}>
                     <span style={{ marginRight: '10px', marginLeft: '15px' }}>{dateText}</span>
                     {selectType === 'period' && (
-                        <Select style={{ width: '170px' }} placeholder="выберите период">
+                        <Select style={{ width: '170px' }} placeholder="выберите период" showSearch>
                             <Select.Option value="day" key="day">
                                 день
                             </Select.Option>
