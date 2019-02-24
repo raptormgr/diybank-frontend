@@ -16,12 +16,7 @@ class NewToken extends React.Component {
   };
   handleSubmit = event => {
     event.preventDefault();
-    api.post('login', {
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      data: this.state
-    }).then(res => {
+    api.post('login', this.state).then(res => {
         axios.defaults.headers.common['Authorization'] = res.data.token;
         console.log(res.data.token);
         history.push('/');
