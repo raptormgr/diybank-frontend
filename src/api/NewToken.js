@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import api from '../api/default';
 import {history} from '../components/routing';
+import api from '../api/default';
+
 class NewToken extends React.Component {
   state = {
-    email: '',
+    username: '',
     password: ''
   };
   handleLogin = event => {
-    this.setState({email: event.target.value});
+    this.setState({username: event.target.value});
   };
   handlePassword = event => {
     this.setState({password: event.target.value});
